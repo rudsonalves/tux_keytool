@@ -1,0 +1,26 @@
+https://www.digicert.com/easy-csr/keytool.htm
+
+RSA 2048:
+
+keytool -genkey -alias server -keyalg RSA -keysize 2048 -keystore labcalc.jks -dname "CN=labcalc,OU=jrblog, O=jrblog.com.br, L=Vila Velha, ST=ES, C=BR" 
+
+
+
+RSA 4096:
+
+keytool -genkey -alias server -keyalg RSA -keysize 4096 -keystore labcalc.jks -dname "CN=labcalc,OU=jrblog, O=jrblog.com.br, L=Vila Velha, ST=ES, C=BR" 
+
+
+
+P-256 (elliptic curve):
+
+keytool -genkey -alias server -keyalg EC -keysize 256 -keystore labcalc.jks -dname "CN=labcalc,OU=jrblog, O=jrblog.com.br, L=Vila Velha, ST=ES, C=BR" 
+
+
+
+
+keytool -certreq -alias server -file labcalc.csr -keystore labcalc.jks 
+
+
+
+echo Your certificate signing request is in labcalc.csr.  Your keystore file is labcalc.jks.  Thanks for using the DigiCert keytool CSR helper.
